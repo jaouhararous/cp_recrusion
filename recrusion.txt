@@ -1,0 +1,22 @@
+PROCEDURE inser-sort(VAR x, VAR y)
+VAR
+   p : INTEGER;
+BEGIN
+    p := x
+    x:= y
+    y := p
+END
+
+ALGORITHM sorting(VAR arr : ARRAY_OF INTEGER)
+VAR
+    i, j : INTEGER;
+    
+BEGIN
+    FOR i FROM 1 TO arr.length-1 DO
+        j = i;
+        WHILE (j > 0 AND arr[j-1] > arr[j]) DO
+            inser-sort (arr[j],arr[j-1])
+            j := j-1
+        END_WHILE
+    END_FOR
+END
